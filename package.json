@@ -1,0 +1,46 @@
+{
+  "name": "laravel-route-goto",
+  "displayName": "Laravel Route Goto (local)",
+  "description": "从 routes/*.php 里的 'Controller@method' 字符串 Ctrl+点击跳到控制器方法，兼容 Laravel 7 的 namespace 分组写法。",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:php"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "laravelRouteGoto.rebuildIndex",
+        "title": "Laravel Route Goto: 重建控制器索引"
+      }
+    ],
+    "configuration": {
+      "title": "Laravel Route Goto",
+      "properties": {
+        "laravelRouteGoto.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用路由字符串到控制器方法的跳转。"
+        },
+        "laravelRouteGoto.showLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "在路由字符串下显示可点击链接（Ctrl+hover 出现下划线）。关掉后仍然支持 F12 / Ctrl+点击。"
+        },
+        "laravelRouteGoto.controllersPath": {
+          "type": "string",
+          "default": "app/Http/Controllers",
+          "description": "控制器目录，相对工作区根目录。"
+        }
+      }
+    }
+  }
+}
